@@ -17,23 +17,26 @@ Now, connect to the database:
 
 ```shell
 # Modify records in the database via MySQL client
-docker-compose exec mysql bash -c 'mysql -u $MYSQL_USER -p$MYSQL_PASSWORD inventory'
+docker-compose exec db bash -c 'mysql -u root -pexample'
 ```
 
 And perform some basic queries in the MySQL screen:
 
 ```shell
-# Switch to the "inventory" database (if not already in)
-mysql> use inventory;
+# Switch to the "mysql" database (internal database)
+mysql> use mysql;
 
 # List the tables
 mysql> show tables;
 
+# Show the sturcture of a table
+mysql> describe user;
+
 # Query the "customers" table
-mysql> SELECT * FROM customers;
+mysql> SELECT host, user FROM users;
 ```
 
-Now take a look at the same using the UI: http://localhost:8090/
+Now take a look at the same using the UI: http://localhost:8080/
 
 ## Exercise
 
@@ -42,11 +45,51 @@ Now it is your turn. You will need to create the tables you defined in the Entit
 But first, let's create a separate database for it:
 
 ```shell
-# Create the 
+# Create the new database
 mysql> create database edem;
+
+# Switch to the new database
+mysql> use edem;
+
+# Confirm there are no tables
+mysql> show tables;
 ```
+
+Just as an example, let's create a sample table:
+
+```shell
+# Create the new database
+mysql> CREATE TABLE PEN (
+	NAME VARCHAR (15) PRIMARY KEY, 
+	TYPE VARCHAR (10), 
+	PEN_COLOR VARCHAR (15),
+	INK_COLOR VARCHAR (15),
+	ORIENTATION VARCHAR (15),
+	WEIGHT DECIMAL (3, 2),
+	EASE_OF_USE BOOLEAN
+);
+
+# Confirm the tables was created
+mysql> show tables;
+
+# Show the sctructure
+mysql> describe PEN;
+
+# Query the table 
+mysql> select * from PEN;
+```
+
+Now, create the tables in your Data Model.
 
 ### Tips
 
 * Create the tables in a TXT file first, and the run them one by one in the command line
 * Beware of the execution order since there are dependencies due to Foreign Keys
+* WARNING: table names are case sensitive!!
+
+## Reference
+
+* MySQL Documentation: https://dev.mysql.com/doc/refman/8.0/en/
+* MySQL (Creating a table): https://dev.mysql.com/doc/refman/8.0/en/creating-tables.html
+* MySQL (Data Types): https://dev.mysql.com/doc/refman/8.0/en/data-types.html
+
