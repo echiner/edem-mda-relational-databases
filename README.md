@@ -4,30 +4,8 @@
 
 <img width="300" src="https://www.itvel.com/img/db_icon_sqlserver_oracle_mysql.jpg">
 
-In these module we will learn how to create a database model, at different levels (logical and physical).
-
-## Initial Setup
-
-We will be using the Docker Compose in this root folder, so start the Docker Compose components:
-
-```shell
-docker-compose up -d
-```
-
-```shell
-# List the running services
-docker ps
-
-# Stop a specific service
-docker-compose stop <SERVICE>
-```
-
-## Services
-
-You will find the services in the following URLs:
-
-* [MySQL](http://localhost:8080/nifi)
-* [Adminer](http://localhost:18080/nifi-registry)
+In this module we will learn how to create a database model, at different levels (logical and physical).
+First (Exercise 1) we will create an Entity Relationship model, and then (Exercise 2) we will implement it creating the required tables in MySQL.
 
 ## Exercises
 
@@ -47,10 +25,3 @@ This is the config we have in the Docker Compose:
 | ------------- | ------------- | ------------- |
 | **MySQL** | 3306  | Host: mysql<br/>Credentials: mysqluser/mysqlpw  |
 | **Adminer (MySQL UI)** | 8090  | http://localhost:8090/  |
-
-## Shut down and destroy
-
-```
-# Shut down the cluster
-docker-compose down
-```
