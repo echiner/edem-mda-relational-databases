@@ -32,8 +32,8 @@ mysql> show tables;
 # Show the sturcture of a table
 mysql> describe user;
 
-# Query the "customers" table
-mysql> SELECT host, user FROM users;
+# Query the "user" table
+mysql> SELECT host, user FROM user;
 ```
 
 Now take a look at the same using the UI: http://localhost:8080/
@@ -69,7 +69,7 @@ mysql> CREATE TABLE PEN (
 	EASE_OF_USE BOOLEAN
 );
 
-# Confirm the tables was created
+# Confirm the table was created
 mysql> show tables;
 
 # Show the sctructure
@@ -79,7 +79,7 @@ mysql> describe PEN;
 mysql> select * from PEN;
 ```
 
-Now, create the tables in your Data Model.
+Now, **create the tables in your Data Model**.
 
 ### Tips
 
