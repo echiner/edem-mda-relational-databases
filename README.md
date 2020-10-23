@@ -15,7 +15,7 @@ First (Exercise 1) we will create an Entity Relationship model, and then (Exerci
 
 ## Understanding the components
 
-For the second exercise we will be using a popular relational database ([]MySQL](https://www.mysql.com/)):
+For the second exercise we will be using a popular relational database ([MySQL](https://www.mysql.com/)):
 
 * **MySQL**: Open-source database, which will be the data source
 * **Adminer (MySQL UI)**: Web-based front-end to browse and interact with the database
